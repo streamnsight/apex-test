@@ -5,7 +5,7 @@
 	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
 	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
-	<changeSet id="f6115fd7e5c34ba6e0220aaf938e33973c17d7a0" author="(MYAPP)-Generated" failOnError="false"    >
+	<changeSet id="76b1d7701248fb779f4518aad139e2328a43979f" author="(MYAPP)-Generated" failOnError="false"    >
 		<n0:createSxmlObject objectName="EBA_DEMO_CAL_PROJECTS" objectType="TABLE" ownerName="MYAPP"   >
 			<n0:source><![CDATA[
   <TABLE xmlns="http://xmlns.oracle.com/ku" version="1.0">
@@ -64,6 +64,10 @@
          </COL_LIST_ITEM>
          <COL_LIST_ITEM>
             <NAME>BUDGET</NAME>
+            <DATATYPE>NUMBER</DATATYPE>
+         </COL_LIST_ITEM>
+         <COL_LIST_ITEM>
+            <NAME>TEST</NAME>
             <DATATYPE>NUMBER</DATATYPE>
          </COL_LIST_ITEM>
       </COL_LIST>
