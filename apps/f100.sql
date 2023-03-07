@@ -28,7 +28,7 @@ prompt APPLICATION 100 - Sample Calendar
 -- Application Export:
 --   Application:     100
 --   Name:            Sample Calendar
---   Date and Time:   21:08 Tuesday March 7, 2023
+--   Date and Time:   21:12 Tuesday March 7, 2023
 --   Exported By:     MYAPP
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -133,8 +133,8 @@ wwv_flow_imp.create_flow(
 ,p_substitution_value_01=>'Sample Calendar'
 ,p_substitution_string_02=>'GETTING_STARTED_URL'
 ,p_substitution_value_02=>'http://www.oracle.com/technetwork/developer-tools/apex/index.html'
-,p_last_updated_by=>'ALLAN'
-,p_last_upd_yyyymmddhh24miss=>'20210519082208'
+,p_last_updated_by=>'WS_ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20230307211128'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_print_server_type=>'INSTANCE'
 ,p_is_pwa=>'N'
@@ -15989,8 +15989,8 @@ wwv_flow_imp_page.create_page(
 ,p_protection_level=>'C'
 ,p_help_text=>'No help is available for this page.'
 ,p_page_component_map=>'13'
-,p_last_updated_by=>'HILARY'
-,p_last_upd_yyyymmddhh24miss=>'20210309053857'
+,p_last_updated_by=>'WS_ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20230307211128'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(1305514111161098272)
@@ -16029,7 +16029,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_plug_display_sequence=>10
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_plug_display_point=>'REGION_POSITION_01'
-,p_plug_source=>'<p>Demonstrations of calendars in Oracle APEX</p>'
+,p_plug_source=>'<p>Demonstrations of calendars in Oracle APEX</p> with CICD'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
