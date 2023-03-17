@@ -1,0 +1,1 @@
+apex export -applicationid &1 -expPubReports -expSavedReports -expIRNotif -expTranslations -expACLAssignments -dir apps/;
