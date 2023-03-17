@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="b2eed29ce1e42870ac2b0205687dfdb03d483966" author="(MYAPP)-Generated"     >
+		<n0:createOracleTrigger objectName="BIU_EBA_DEMO_CAL_PROJECTS" objectType="TRIGGER" ownerName="MYAPP"   >
+			<n0:source><![CDATA[
+  CREATE OR REPLACE EDITIONABLE TRIGGER "MYAPP"."BIU_EBA_DEMO_CAL_PROJECTS" 
+   before insert or update on EBA_DEMO_CAL_PROJECTS
+   for each row
+begin
+   if :new."ID" is null then
+     select to_number(sys_guid(),'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX') into :new.id from dual;
+   end if;
+   if inserting then
+       :new.row_version_number := 1;
+   elsif updating then
+       :new.row_version_number := nvl(:old.row_version_number,1) + 1;
+   end if;
+   if :new.start_date > :new.end_date then
+       RAISE_APPLICATION_ERROR(-20001, 'Error start date must be before end date');
+   end if;
+end;
+
+/
+/
+ALTER TRIGGER "MYAPP"."BIU_EBA_DEMO_CAL_PROJECTS" ENABLE;]]></n0:source>
+		</n0:createOracleTrigger>
+	</changeSet>
+</databaseChangeLog>
